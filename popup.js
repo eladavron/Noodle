@@ -1,8 +1,18 @@
 console.log("Popup: Loaded!");
-const Background = chrome.extension.getBackgroundPage();
+Background = chrome.extension.getBackgroundPage();
 chrome.runtime.sendMessage({type: "getList"},function(response) {
     if (response.type == "getList")
 	{
+		if (!Background)
+		{
+			Background = chrome.extension.getBackgroundPage();			
+			console.log("Popup: Re-aquired Background instance!");
+			if (!Background)
+			{
+				console.log("Popup: Couldn't get background page instance!");
+				return;
+			}
+		}
 		var list = Background.list;
 		if (!list)
 		{
@@ -46,12 +56,11 @@ chrome.runtime.sendMessage({type: "getList"},function(response) {
 		console.log("Popup: Request type unknown: " + request.type);
 	}
   });
+  
 chrome.runtime.onMessage.addListener(function (request) { 	
 	console.log("Popup: Intercepted request!");
 	
 });
- 
-
 
 function sendToggle(cid, newStatus)
 {

@@ -1,4 +1,3 @@
-
 var list = [];
 
 chrome.runtime.onInstalled.addListener(function() {
