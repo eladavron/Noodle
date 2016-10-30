@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener(
 		{
 			console.log("Background: Recieved " + request.courseID + ": " + request.title);
 			if (list)
-				list.push({id: request.courseID, title: request.title});
+				list.push({id: request.courseID, title: request.courseTitle});
 		}
 		else if (request.type == "getList")
 		{

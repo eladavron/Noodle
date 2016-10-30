@@ -19,6 +19,7 @@ chrome.runtime.sendMessage({type: "getList"},function(response) {
 			console.log("Popup: Couldn't get ilst from Background page!");
 			return;	
 		}
+		document.getElementById("formTable").innerHTML=''; //Clear existing Popup
 		var i = 0;
 		for (i=0;i<list.length;i++)
 		{		
