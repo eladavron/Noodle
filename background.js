@@ -6,7 +6,7 @@ chrome.runtime.onInstalled.addListener(function() {
             conditions: [
                 new chrome.declarativeContent.PageStateMatcher({
                     pageUrl: {
-                        urlMatches: '^http://moodle.haifa.ac.il/$'
+                        urlMatches: '^https://mw4.haifa.ac.il/$'
                     }
                 })
             ],
