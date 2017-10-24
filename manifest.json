@@ -4,7 +4,7 @@
 	"short_name": "Noodle",
 	"author": "אלעד אברון, מדעי המחשב 2014",
 	"description": "החבאת קורסים באתר המודל של אוניברסיטת חיפה",
-	"version": "1.6",
+	"version": "1.7",
 	"icons": { "128": "128.png",
 				"48": "48.png",
 				"16": "16.png"},
@@ -22,7 +22,7 @@
     ],
 	"content_scripts": [
 	{
-        "matches": ["https://mw4.haifa.ac.il/"],
+        "matches": ["https://mw5.haifa.ac.il/"],
         "js": ["contentscript.js"]
     }]
 }
